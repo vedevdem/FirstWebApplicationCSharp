@@ -1,28 +1,39 @@
 ﻿namespace WebApplication1;
 public class Triangle
 {
-    private double firstSide;
-    private double secondSide;
-    private double thirdSide;
+    private readonly double _firstSide;
+    private readonly double _secondSide;
+    private readonly double _thirdSide;
     public bool isCorrect = false;
-    public Triangle(double first_side_val, double second_side_val, double third_side_val)
+    public Triangle(double firstSide, double secondSide, double thirdSide)
     {
-        firstSide = first_side_val;
-        secondSide = second_side_val;
-        thirdSide = third_side_val;
-        isCorrect = Validation();
+        _firstSide = firstSide;
+        _secondSide = secondSide;
+        _thirdSide = thirdSide;
+        Validate();
     }
-    public bool Validation()
+    private void Validate()
     {
-        if (firstSide <= 0 || secondSide <= 0 || thirdSide <= 0)
-            return false;
-        if (firstSide >= secondSide + thirdSide || secondSide >= firstSide + thirdSide || thirdSide >= firstSide + secondSide)
-            return false;
-        return true;
+        if (_firstSide <= 0)
+            throw new ArgumentOutOfRangeException("firstSide", "first side value is negative or 0");
+        if (_secondSide <= 0)
+            throw new ArgumentOutOfRangeException("secondSide", "second side value is negative or 0");
+        if (_thirdSide <= 0)
+            throw new ArgumentOutOfRangeException("thirdSide", "third side value is negative or 0");
+        TriangleInequalityCheck();
+    }
+    private void TriangleInequalityCheck()
+    {
+        if (_firstSide  >= _secondSide + _thirdSide)
+            throw new ArgumentOutOfRangeException("firstSide", "first side value is too big (the triangle inequality is not satisfied)");
+        if (_secondSide >= _firstSide  + _thirdSide)
+            throw new ArgumentOutOfRangeException("secondSide", "second side value is too big (the triangle inequality is not satisfied)");
+        if (_thirdSide  >= _firstSide  + _secondSide)
+            throw new ArgumentOutOfRangeException("thirdSide", "third side value is too big (the triangle inequality is not satisfied)");
     }
     public double GetArea()
     {
-        double semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
-        return Math.Sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
+        double semiPerimeter = (_firstSide + _secondSide + _thirdSide) / 2;
+        return Math.Sqrt(semiPerimeter * (semiPerimeter - _firstSide) * (semiPerimeter - _secondSide) * (semiPerimeter - _thirdSide));
     }
 }
