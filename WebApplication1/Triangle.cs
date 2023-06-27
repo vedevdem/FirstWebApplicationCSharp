@@ -13,15 +13,10 @@ public class Triangle
     }
     private void Validate()
     {
-        SideValueCheckForZeroOrNegative(_firstSide);
-        SideValueCheckForZeroOrNegative(_secondSide);
-        SideValueCheckForZeroOrNegative(_thirdSide);
+        ValidationHelper.ThrowsIfNotPositive(_firstSide);
+        ValidationHelper.ThrowsIfNotPositive(_secondSide);
+        ValidationHelper.ThrowsIfNotPositive(_thirdSide);
         TriangleInequalityCheckForAllSides();
-    }
-    private void SideValueCheckForZeroOrNegative(double sideVal)
-    {
-        if (sideVal <= 0)
-            throw new ArgumentOutOfRangeException(nameof(sideVal), "side value is negative or 0");
     }
     private void TriangleInequalityCheckForAllSides()
     {
