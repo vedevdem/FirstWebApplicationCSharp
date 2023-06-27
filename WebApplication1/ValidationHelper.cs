@@ -1,6 +1,6 @@
 ﻿namespace WebApplication1;
 
-public class ValidationHelper
+public static class ValidationHelper
 {
     public static void ThrowsIfNotPositive(double val)
     {
