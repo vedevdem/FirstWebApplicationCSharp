@@ -6,13 +6,10 @@ public class Circle
     public Circle(double radius)
     {
         _radius = radius;
+        ValidationHelper.ThrowsIfNotPositive(_radius);
     }
-    private void Validate()
+    public double GetArea()
     {
-
-    }
-    public GetArea()
-    {
-
+        return Math.PI * Math.Pow(_radius, 2);
     }
 }

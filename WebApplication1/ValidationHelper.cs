@@ -2,9 +2,9 @@
 
 public static class ValidationHelper
 {
-    public void ThrowsIfNotPositive(double val)
+    public static void ThrowsIfNotPositive(double val)
     {
         if (val <= 0)
-            throw new ArgumentOutOfRangeException(nameof(val), "value is negative or 0")
+            throw new ArgumentOutOfRangeException(nameof(val), "value is negative or 0");
     }
 }
