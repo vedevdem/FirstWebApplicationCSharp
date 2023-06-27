@@ -1,19 +1,19 @@
 ﻿namespace WebApplication1;
 public class Triangle
 {
-    public int a;
-    public int b;
-    public int c;
+    private int firstSide;
+    private int secondSide;
+    private int thirdSide;
 
-    public Triangle(int a_, int b_, int c_)
+    public Triangle(int first_side_val, int second_side_val, int third_side_val)
     {
-        a = a_;
-        b = b_;
-        c = c_;
+        firstSide = first_side_val;
+        secondSide = second_side_val;
+        thirdSide = third_side_val;
     }
     public double GetArea()
     {
-        double p = (a + b + c) / 2;
-        return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+        double semiPerimeter = (firstSide + secondSide + thirdSide) / 2;
+        return Math.Sqrt(semiPerimeter * (semiPerimeter - firstSide) * (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
     }
 }
