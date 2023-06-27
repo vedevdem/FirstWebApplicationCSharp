@@ -13,13 +13,15 @@ public class Triangle
     }
     private void Validate()
     {
-        if (_firstSide <= 0)
-            throw new ArgumentOutOfRangeException(nameof(_firstSide), "first side value is negative or 0");
-        if (_secondSide <= 0)
-            throw new ArgumentOutOfRangeException(nameof(_secondSide), "second side value is negative or 0");
-        if (_thirdSide <= 0)
-            throw new ArgumentOutOfRangeException(nameof(_thirdSide), "third side value is negative or 0");
+        SideValueCheckForZeroOrNegative(_firstSide);
+        SideValueCheckForZeroOrNegative(_secondSide);
+        SideValueCheckForZeroOrNegative(_thirdSide);
         TriangleInequalityCheckForAllSides();
+    }
+    private void SideValueCheckForZeroOrNegative(double sideVal)
+    {
+        if (sideVal <= 0)
+            throw new ArgumentOutOfRangeException(nameof(sideVal), "side value is negative or 0");
     }
     private void TriangleInequalityCheckForAllSides()
     {
