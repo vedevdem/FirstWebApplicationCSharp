@@ -1,6 +1,6 @@
 ﻿namespace WebApplication1;
 
-public class Circle
+public class Circle : IFigure
 {
     private readonly double _radius;
     public Circle(double radius)
