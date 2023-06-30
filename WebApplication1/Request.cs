@@ -5,9 +5,11 @@ namespace WebApplication1;
 public class Request
 {
     [DataMember(Name = "a")]
-    public int First { get; set; }
+    public int FirstSide { get; set; }
     [DataMember(Name = "b")]
-    public int Second { get; set; }
+    public int SecondSide { get; set; }
     [DataMember(Name = "c")]
-    public int Third { get; set; }
+    public int ThirdSide { get; set; }
+    [DataMember(Name = "r")]
+    public int Radius { get; set; }
 }

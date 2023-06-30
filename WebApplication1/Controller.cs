@@ -17,7 +17,14 @@ public class MyController : Controller
     [Route("post")]
     public double PostSum([FromBody] Request request)
     {
-        var triangle = new Triangle(request.First, request.Second, request.Third);
-        return triangle.GetArea();
+        var triangle = new Triangle(request.FirstSide, request.SecondSide, request.ThirdSide);
+        var circle = new Circle(request.Radius);
+        var figures = new List<IFigure>
+        {
+            triangle,
+            circle
+        };
+        var processor = new Processor();
+        return processor.SumArea(figures);
     }
 }

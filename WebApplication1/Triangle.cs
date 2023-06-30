@@ -1,5 +1,5 @@
 ﻿namespace WebApplication1;
-public class Triangle
+public class Triangle : IFigure
 {
     private readonly double _firstSide;
     private readonly double _secondSide;
