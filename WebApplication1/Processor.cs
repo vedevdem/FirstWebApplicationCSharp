@@ -4,8 +4,8 @@ public class Processor
 {
     public double SumArea(List<IFigure> figures)
     {
-        double sum = 0;
-        foreach(IFigure figure in figures)
+        var sum = 0.0;
+        foreach(var figure in figures)
         {
             sum += figure.GetArea();
         }

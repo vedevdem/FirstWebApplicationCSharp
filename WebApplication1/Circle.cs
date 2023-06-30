@@ -10,6 +10,6 @@ public class Circle : IFigure
     }
     public double GetArea()
     {
-        return Math.PI * Math.Pow(_radius, 2);
+        return Math.PI * _radius * _radius;
     }
 }
