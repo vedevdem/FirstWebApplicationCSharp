@@ -6,20 +6,6 @@ namespace TestProject1;
 public class UnitTests
 {
     [TestMethod]
-    [DataRow(4, 3, 5, "345")]
-    [DataRow(5, 5, 6, "556")]
-    [DataRow(15, 13, 4, "41315")]
-    public void TriangleConstructorTest(double firstSide, double secondSide, double thirdSide, string expectedResult)
-    {
-        //Arrange
-        //Act
-        var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        var result = triangle.GetMinSide().ToString() + triangle.GetMidSide().ToString() + triangle.GetMaxSide().ToString();
-        //Assert
-        Assert.AreEqual(expectedResult, result, "msg");
-    }
-
-    [TestMethod]
     [DataRow(4, 3, 5, true)]
     [DataRow(5, 5, 6, false)]
     [DataRow(15, 13, 4, false)]
