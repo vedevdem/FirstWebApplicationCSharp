@@ -6,10 +6,38 @@ namespace TestProject1;
 public class UnitTests
 {
     [TestMethod]
+    [DataRow(4, 3, 5, "345")]
+    [DataRow(5, 5, 6, "556")]
+    [DataRow(15, 13, 4, "41315")]
+    public void TriangleConstructorTest(double firstSide, double secondSide, double thirdSide, string expectedResult)
+    {
+        //Arrange
+        //Act
+        var triangle = new Triangle(firstSide, secondSide, thirdSide);
+        var result = triangle.GetMinSide().ToString() + triangle.GetMidSide().ToString() + triangle.GetMaxSide().ToString();
+        //Assert
+        Assert.AreEqual(expectedResult, result, "msg");
+    }
+
+    [TestMethod]
+    [DataRow(4, 3, 5, true)]
+    [DataRow(5, 5, 6, false)]
+    [DataRow(15, 13, 4, false)]
+    [DataRow(15, 12, 9, true)]
+    public void TriangleIsRectangularTests(double firstSide, double secondSide, double thirdSide, bool expectedResult)
+    {
+        //Arrange
+        var triangle = new Triangle(firstSide, secondSide, thirdSide);
+        //Act
+        var result = triangle.IsRectangular();
+        //Assert
+        Assert.AreEqual(expectedResult, result, "msg");
+    }
+    [TestMethod]
     [DataRow(3, 4, 5, 6)]
     [DataRow(5, 5, 6, 12)]
     [DataRow(15, 13, 4, 24)]
-    public void TriangleTest(double firstSide, double secondSide, double thirdSide, double expectedResult)
+    public void TriangleAreaTest(double firstSide, double secondSide, double thirdSide, double expectedResult)
     {
         //Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
@@ -23,7 +51,7 @@ public class UnitTests
     [DataRow(1, Math.PI)]
     [DataRow(2, 4 * Math.PI)]
     [DataRow(3, 9 * Math.PI)]
-    public void CircleTest(double radius, double expectedResult)
+    public void CircleAreaTest(double radius, double expectedResult)
     {
         //Arrange
         var circle = new Circle(radius);
