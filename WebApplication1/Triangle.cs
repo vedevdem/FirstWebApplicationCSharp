@@ -34,4 +34,12 @@ public class Triangle : IFigure
         double semiPerimeter = (_firstSide + _secondSide + _thirdSide) / 2;
         return Math.Sqrt(semiPerimeter * (semiPerimeter - _firstSide) * (semiPerimeter - _secondSide) * (semiPerimeter - _thirdSide));
     }
+    public bool IsRectangular()
+    {
+        double[] sidesArray = { _firstSide, _secondSide, _thirdSide };
+        Array.Sort(sidesArray);
+        if (sidesArray[2] * sidesArray[2] == sidesArray[1] * sidesArray[1] + sidesArray[0] * sidesArray[0])
+            return true;
+        return false;
+    }
 }
