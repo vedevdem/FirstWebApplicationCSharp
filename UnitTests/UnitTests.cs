@@ -1,6 +1,6 @@
-using WebApplication1;
+using MyWebApplication;
 
-namespace TestProject1;
+namespace UnitTests;
 
 [TestClass]
 public class UnitTests

@@ -1,4 +1,4 @@
-﻿namespace WebApplication1;
+﻿namespace MyWebApplication;
 
 public static class ValidationHelper
 {
