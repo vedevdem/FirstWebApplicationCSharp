@@ -15,8 +15,10 @@ public class UnitTests
     {
         //Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
+
         //Act
         var result = triangle.IsRectangular();
+
         //Assert
         Assert.AreEqual(expectedResult, result, "msg");
     }
@@ -28,8 +30,10 @@ public class UnitTests
     {
         //Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
+
         //Act
         var result = triangle.GetArea();
+
         //Assert
         Assert.AreEqual(expectedResult, result, "Some message");
     }
@@ -42,8 +46,10 @@ public class UnitTests
     {
         //Arrange
         var circle = new Circle(radius);
+
         //Act
         var result = circle.GetArea();
+
         //Assert
         Assert.AreEqual(expectedResult, result, "Msg");
     }
@@ -61,8 +67,10 @@ public class UnitTests
             {
                 triangle
             };
+
         //Act
         var result = processor.SumArea(triangleList);
+
         //Assert
         Assert.AreEqual(expectedResult, result, "msg");
     }
@@ -80,8 +88,10 @@ public class UnitTests
             {
                 circle
             };
+
         //Act
         var result = processor.SumArea(circleList);
+
         //Assert
         Assert.AreEqual(expectedResult, result, "msg");
     }
@@ -100,8 +110,10 @@ public class UnitTests
                 triangle2,
                 triangle3
             };
+
         //Act
         var result = processor.SumArea(triangleList);
+
         //Assert
         Assert.AreEqual(42, result, "msg");
     }
@@ -120,8 +132,10 @@ public class UnitTests
                 circle2,
                 circle3
             };
+
         //Act
         var result = processor.SumArea(circleList);
+
         //Assert
         Assert.AreEqual(14 * Math.PI, result, "msg");
     }
@@ -146,8 +160,10 @@ public class UnitTests
                 circle2,
                 circle3
             };
+
         //Act
         var result = processor.SumArea(figureList);
+
         //Assert
         Assert.AreEqual(14 * Math.PI + 42.0, result, 0.0000000000001, "msg");
     }
