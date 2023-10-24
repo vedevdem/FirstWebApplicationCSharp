@@ -1,4 +1,6 @@
-﻿namespace MyWebApplication;
+﻿using MyWebApplication;
+
+namespace Model.Figures;
 public class Triangle : IFigure
 {
     private readonly double _firstSide;

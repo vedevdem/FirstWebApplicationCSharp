@@ -1,3 +1,4 @@
+using Model.Figures;
 using MyWebApplication;
 
 namespace UnitTests;

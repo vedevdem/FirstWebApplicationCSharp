@@ -1,4 +1,6 @@
-﻿namespace MyWebApplication;
+﻿using Model.Figures;
+
+namespace MyWebApplication;
 
 public class Circle : IFigure
 {
