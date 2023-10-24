@@ -38,7 +38,7 @@ public class Triangle : IFigure
 
     public double GetArea()
     {
-        double semiPerimeter = (_firstSide + _secondSide + _thirdSide) / 2;
+        var semiPerimeter = (_firstSide + _secondSide + _thirdSide) / 2;
         return Math.Sqrt(semiPerimeter * (semiPerimeter - _firstSide) * (semiPerimeter - _secondSide) * (semiPerimeter - _thirdSide));
     }
 

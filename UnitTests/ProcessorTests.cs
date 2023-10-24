@@ -1,5 +1,6 @@
 ﻿using Model.Figures;
 using MyWebApplication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests;
 
@@ -10,7 +11,7 @@ public class ProcessorTests
     [DataRow(3, 4, 5, 6)]
     [DataRow(5, 5, 6, 12)]
     [DataRow(15, 13, 4, 24)]
-    public void ProcessorTestForSingleTriangle(double firstSide, double secondSide, double thirdSide, double expectedResult)
+    public void SingleTriangle(double firstSide, double secondSide, double thirdSide, double expectedResult)
     {
         //Arrange
         var processor = new Processor();
@@ -31,7 +32,7 @@ public class ProcessorTests
     [DataRow(1, Math.PI)]
     [DataRow(2, 4 * Math.PI)]
     [DataRow(3, 9 * Math.PI)]
-    public void ProcessorTestForSingleCircle(double radius, double expectedResult)
+    public void SingleCircle(double radius, double expectedResult)
     {
         //Arrange
         var processor = new Processor();
@@ -49,7 +50,7 @@ public class ProcessorTests
     }
 
     [TestMethod]
-    public void ProcessorTestForTriangles()
+    public void Triangles()
     {
         //Arrange
         var processor = new Processor();
@@ -71,7 +72,7 @@ public class ProcessorTests
     }
 
     [TestMethod]
-    public void ProcessorTestForCircles()
+    public void Circles()
     {
         //Arrange
         var processor = new Processor();
@@ -93,7 +94,7 @@ public class ProcessorTests
     }
 
     [TestMethod]
-    public void ProcessorTestForMixedFigures()
+    public void MixedFigures()
     {
         //Arrange
         var processor = new Processor();
