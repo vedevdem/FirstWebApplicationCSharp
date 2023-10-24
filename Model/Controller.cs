@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1;
+namespace MyWebApplication;
 
 [Controller]
 [Route("test")]
