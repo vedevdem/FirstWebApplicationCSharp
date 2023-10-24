@@ -1,5 +1,6 @@
 ﻿using Model.Figures;
 using MyWebApplication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests;
 
@@ -11,7 +12,7 @@ public class TriangleTests
     [DataRow(5, 5, 6, false)]
     [DataRow(15, 13, 4, false)]
     [DataRow(15, 12, 9, true)]
-    public void TriangleIsRectangularTests(double firstSide, double secondSide, double thirdSide, bool expectedResult)
+    public void IsRectangular(double firstSide, double secondSide, double thirdSide, bool expectedResult)
     {
         //Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);
@@ -27,7 +28,7 @@ public class TriangleTests
     [DataRow(3, 4, 5, 6)]
     [DataRow(5, 5, 6, 12)]
     [DataRow(15, 13, 4, 24)]
-    public void TriangleAreaTest(double firstSide, double secondSide, double thirdSide, double expectedResult)
+    public void GetArea(double firstSide, double secondSide, double thirdSide, double expectedResult)
     {
         //Arrange
         var triangle = new Triangle(firstSide, secondSide, thirdSide);

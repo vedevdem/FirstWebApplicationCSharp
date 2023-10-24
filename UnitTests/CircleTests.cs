@@ -1,5 +1,6 @@
 ﻿using Model.Figures;
 using MyWebApplication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests;
 
@@ -10,7 +11,7 @@ public class CircleTests
     [DataRow(1, Math.PI)]
     [DataRow(2, 4 * Math.PI)]
     [DataRow(3, 9 * Math.PI)]
-    public void CircleAreaTest(double radius, double expectedResult)
+    public void GetArea(double radius, double expectedResult)
     {
         //Arrange
         var circle = new Circle(radius);
