@@ -1,57 +1,17 @@
+﻿using Model.Figures;
 using MyWebApplication;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTests;
 
 [TestClass]
-public class UnitTests
+public class ProcessorTests
 {
     [TestMethod]
-    [DataRow(4, 3, 5, true)]
-    [DataRow(5, 5, 6, false)]
-    [DataRow(15, 13, 4, false)]
-    [DataRow(15, 12, 9, true)]
-    public void TriangleIsRectangularTests(double firstSide, double secondSide, double thirdSide, bool expectedResult)
-    {
-        //Arrange
-        var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        //Act
-        var result = triangle.IsRectangular();
-        //Assert
-        Assert.AreEqual(expectedResult, result, "msg");
-    }
-    [TestMethod]
     [DataRow(3, 4, 5, 6)]
     [DataRow(5, 5, 6, 12)]
     [DataRow(15, 13, 4, 24)]
-    public void TriangleAreaTest(double firstSide, double secondSide, double thirdSide, double expectedResult)
-    {
-        //Arrange
-        var triangle = new Triangle(firstSide, secondSide, thirdSide);
-        //Act
-        var result = triangle.GetArea();
-        //Assert
-        Assert.AreEqual(expectedResult, result, "Some message");
-    }
-
-    [TestMethod]
-    [DataRow(1, Math.PI)]
-    [DataRow(2, 4 * Math.PI)]
-    [DataRow(3, 9 * Math.PI)]
-    public void CircleAreaTest(double radius, double expectedResult)
-    {
-        //Arrange
-        var circle = new Circle(radius);
-        //Act
-        var result = circle.GetArea();
-        //Assert
-        Assert.AreEqual(expectedResult, result, "Msg");
-    }
-
-    [TestMethod]
-    [DataRow(3, 4, 5, 6)]
-    [DataRow(5, 5, 6, 12)]
-    [DataRow(15, 13, 4, 24)]
-    public void ProcessorTestForSingleTriangle(double firstSide, double secondSide, double thirdSide, double expectedResult)
+    public void SingleTriangle(double firstSide, double secondSide, double thirdSide, double expectedResult)
     {
         //Arrange
         var processor = new Processor();
@@ -60,8 +20,10 @@ public class UnitTests
             {
                 triangle
             };
+
         //Act
         var result = processor.SumArea(triangleList);
+
         //Assert
         Assert.AreEqual(expectedResult, result, "msg");
     }
@@ -70,7 +32,7 @@ public class UnitTests
     [DataRow(1, Math.PI)]
     [DataRow(2, 4 * Math.PI)]
     [DataRow(3, 9 * Math.PI)]
-    public void ProcessorTestForSingleCircle(double radius, double expectedResult)
+    public void SingleCircle(double radius, double expectedResult)
     {
         //Arrange
         var processor = new Processor();
@@ -79,14 +41,16 @@ public class UnitTests
             {
                 circle
             };
+
         //Act
         var result = processor.SumArea(circleList);
+
         //Assert
         Assert.AreEqual(expectedResult, result, "msg");
     }
 
     [TestMethod]
-    public void ProcessorTestForTriangles()
+    public void Triangles()
     {
         //Arrange
         var processor = new Processor();
@@ -99,14 +63,16 @@ public class UnitTests
                 triangle2,
                 triangle3
             };
+
         //Act
         var result = processor.SumArea(triangleList);
+
         //Assert
         Assert.AreEqual(42, result, "msg");
     }
 
     [TestMethod]
-    public void ProcessorTestForCircles()
+    public void Circles()
     {
         //Arrange
         var processor = new Processor();
@@ -119,14 +85,16 @@ public class UnitTests
                 circle2,
                 circle3
             };
+
         //Act
         var result = processor.SumArea(circleList);
+
         //Assert
         Assert.AreEqual(14 * Math.PI, result, "msg");
     }
 
     [TestMethod]
-    public void ProcessorTestForMixedFigures()
+    public void MixedFigures()
     {
         //Arrange
         var processor = new Processor();
@@ -145,8 +113,10 @@ public class UnitTests
                 circle2,
                 circle3
             };
+
         //Act
         var result = processor.SumArea(figureList);
+
         //Assert
         Assert.AreEqual(14 * Math.PI + 42.0, result, 0.0000000000001, "msg");
     }
