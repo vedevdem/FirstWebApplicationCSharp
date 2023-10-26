@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Model.Figures;
+using System.Collections;
 
 namespace MyWebApplication;
 
@@ -20,12 +21,12 @@ public class MyController : Controller
     {
         var triangle = new Triangle(request.FirstSide, request.SecondSide, request.ThirdSide);
         var circle = new Circle(request.Radius);
-        var figures = new List<IFigure>
+        var listOfFigures = new List<IFigure>
         {
             triangle,
             circle
         };
         var processor = new Processor();
-        return processor.SumArea(figures);
+        return processor.SumArea(listOfFigures);
     }
 }
