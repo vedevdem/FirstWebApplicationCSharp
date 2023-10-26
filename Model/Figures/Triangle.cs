@@ -44,8 +44,13 @@ public class Triangle : IFigure
 
     public bool IsRectangular()
     {
-        double[] sidesArray = { _firstSide, _secondSide, _thirdSide };
-        Array.Sort(sidesArray);
+        var sidesArray = new List<double>
+        {
+            _firstSide,
+            _secondSide,
+            _thirdSide
+        };
+        sidesArray.Sort();
         if (sidesArray[2] * sidesArray[2] == sidesArray[1] * sidesArray[1] + sidesArray[0] * sidesArray[0])
             return true;
         return false;
